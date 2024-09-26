@@ -1,0 +1,25 @@
+<html></html>
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-assets>
+      <a-asset-item id="snowflake" src="snowflake/scene.gltf"></a-asset-item>
+    </a-assets>
+    <a-scene>
+        <a-entity camera look-controls>
+          <a-cursor fuse="true" fuse-timeout="1000" raycaster="objects: .clickable" color="#ff"></a-cursor>
+        </a-entity>
+      <a-sky src="location2.jpg"></a-sky>
+      <a-plane src="button2.png" class="clickable" id="toLokasi1" position="2 0 -3" rotation="0 0 0" width="3" height="1" color="#E78F81">
+      <a-entity gltf-model="#snowflake" position="-5 0 0" scale="3 3 3" rotation="0 90 0"></a-entity>
+    </a-scene>
+
+    <script>
+        // Menangani klik pada tombol untuk pindah ke halaman View 2
+        document.querySelector('#toLokasi1').addEventListener('click', function () {
+          window.location.href = 'index.html';
+        });
+      </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<html></html>
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="kirby" src="kirby/scene.gltf"></a-asset-item>
+        <a-asset-item id="balloon" src="balloon/scene.gltf"></a-asset-item>
+      </a-assets>
+        <a-entity camera look-controls>
+          <a-cursor fuse="true" fuse-timeout="1000" raycaster="objects: .clickable" color="#ff"></a-cursor>
+        </a-entity>
+      <a-sky src="location1.jpg"></a-sky>
+      <a-plane src="button1.png" class="clickable" id="toLokasi2" position="-5 1 -3" rotation="0 0 0" width="3" height="1" color="#E78F81">
+      </a-plane>
+      
+      <a-entity gltf-model="#kirby" position="-5 -4 0" scale="0.25 0.25 0.25" rotation="0 90 0"></a-entity>
+      <a-entity gltf-model="#balloon" position="-5 -3 -10" scale="0.25 0.25 0.25" rotation="0 90 0"></a-entity>
+
+    </a-scene>
+
+    <script>
+        // Menangani klik pada tombol untuk pindah ke halaman View 2
+        document.querySelector('#toLokasi2').addEventListener('click', function () {
+          window.location.href = 'location2.html';
+        });
+      </script>
+  </body>
+</html>
